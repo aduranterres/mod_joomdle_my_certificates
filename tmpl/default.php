@@ -18,6 +18,11 @@ use Joomdle\Component\Joomdle\Administrator\Helper\ContentHelper;
 defined('_JEXEC') or die('Restricted access');
 
 $itemid = ContentHelper::getMenuItem();
+
+if ((!is_array($certificates)) || (count($certificates) == 0)) {
+    echo '<span class="joomdle_nocourses_message">' . Text::_('COM_JOOMDLE_NO_CERTIFICATES_YET') . "</span>";
+    return;
+}
 ?>
 
 <ul class="joomdlecertificates">
@@ -25,7 +30,7 @@ $itemid = ContentHelper::getMenuItem();
     $type = $params->get('certificate_type');
     if (is_array($certificates)) {
         foreach ($certificates as $cert) {
-            ?>
+    ?>
             <li>
                 <?php
                 $id = $cert['id'];
@@ -52,7 +57,7 @@ $itemid = ContentHelper::getMenuItem();
                     <?php endif; ?>
                 </span>
             </li>
-            <?php
+    <?php
         }
     }
     ?>
