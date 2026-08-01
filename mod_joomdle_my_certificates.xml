@@ -40,7 +40,7 @@
     </config>
 
     <updateservers>
-        <server type="extension" priority="1" name="mod_joomdle_my_certificates">http://www.joomdle.com/index.php?option=com_ars&amp;view=update&amp;task=stream&amp;format=xml&amp;id=2</server>
+        <server type="extension" priority="1" name="mod_joomdle_my_certificates">https://www.joomdle.com/index.php?option=com_ars&amp;view=update&amp;task=stream&amp;format=xml&amp;id=2</server>
     </updateservers>
 
 </extension>

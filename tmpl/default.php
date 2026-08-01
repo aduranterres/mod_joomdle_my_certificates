@@ -30,7 +30,7 @@ if ((!is_array($certificates)) || (count($certificates) == 0)) {
     $type = $params->get('certificate_type');
     if (is_array($certificates)) {
         foreach ($certificates as $cert) {
-    ?>
+            ?>
             <li>
                 <?php
                 $id = $cert['id'];
@@ -57,7 +57,7 @@ if ((!is_array($certificates)) || (count($certificates) == 0)) {
                     <?php endif; ?>
                 </span>
             </li>
-    <?php
+            <?php
         }
     }
     ?>
