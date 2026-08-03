@@ -2,7 +2,7 @@
 
 /**
  * @package     Joomdle
- * @subpackage  mod_joomdle_courses
+ * @subpackage  mod_joomdle_my_certificates
  *
  * @copyright   Antonio Duran Terres
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -17,7 +17,7 @@ use Joomla\DI\Container;
 use Joomla\DI\ServiceProviderInterface;
 
 /**
- * The joomdle mycertificates module service provider.
+ * The Joomdle My Certificates module service provider.
  *
  * @since  4.4.0
  */

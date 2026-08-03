@@ -2,7 +2,7 @@
 
 /**
  * @package     Joomdle
- * @subpackage  mod_joomdle_courses
+ * @subpackage  mod_joomdle_my_certificates
  *
  * @copyright   Antonio Duran Terres
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -23,7 +23,7 @@ use Joomla\CMS\Factory;
 // phpcs:enable PSR1.Files.SideEffects
 
 /**
- * Dispatcher class for mod_joomdle_courses
+ * Dispatcher class for mod_joomdle_my_certificates.
  *
  * @since  4.4.0
  */
@@ -42,7 +42,7 @@ class Dispatcher extends AbstractModuleDispatcher // implements HelperFactoryAwa
 
         $params = $data['params'];
 
-        $data['certificate_type'] = $params->get('certificate_type courses only', 'custom');
+        $data['certificate_type'] = $params->get('certificate_type', 'custom');
         $data['show_send_certificate'] = $params->get('show_send_certificate', 0);
         $user = Factory::getApplication()->getIdentity();
         $data['certificates'] = ContentHelper::getMyCertificates($user->username, $data['certificate_type']);

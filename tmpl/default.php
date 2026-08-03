@@ -2,7 +2,7 @@
 
 /**
  * @package     Joomdle
- * @subpackage  mod_joomdle_certificates
+ * @subpackage  mod_joomdle_my_certificates
  *
  * @copyright   Antonio Duran Terres
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
@@ -17,8 +17,6 @@ use Joomdle\Component\Joomdle\Administrator\Helper\ContentHelper;
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 
-$itemid = ContentHelper::getMenuItem();
-
 if ((!is_array($certificates)) || (count($certificates) == 0)) {
     echo '<span class="joomdle_nocourses_message">' . Text::_('COM_JOOMDLE_NO_CERTIFICATES_YET') . "</span>";
     return;
@@ -30,7 +28,7 @@ if ((!is_array($certificates)) || (count($certificates) == 0)) {
     $type = $params->get('certificate_type');
     if (is_array($certificates)) {
         foreach ($certificates as $cert) {
-            ?>
+    ?>
             <li>
                 <?php
                 $id = $cert['id'];
@@ -51,13 +49,13 @@ if ((!is_array($certificates)) || (count($certificates) == 0)) {
                 }
                 ?>
                 <span>
-                    <a target='_blank' href="<?php echo $redirect_url; ?>"><?php echo $cert['name']; ?></a>
+                    <a target="_blank" rel="noopener noreferrer" href="<?php echo $redirect_url; ?>"><?php echo $cert['name']; ?></a>
                     <?php if ($show_send_certificate) : ?>
                         <a href="index.php?option=com_joomdle&view=sendcert&layout=edit&tmpl=component&type=<?php echo $certificate_type; ?>&cert_id=<?php echo $id; ?>" onclick="window.open(this.href,'win2','width=400,height=500,top=100,left=500,menubar=yes,resizable=yes'); return false;" title="Email"><i class="fa fa-envelope" aria-hidden="true"></i></a>
                     <?php endif; ?>
                 </span>
             </li>
-            <?php
+    <?php
         }
     }
     ?>
